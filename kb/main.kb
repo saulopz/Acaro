@@ -1,0 +1,75 @@
+# Variables ----------------- 
+v botname = Arisa
+v age = 18
+
+# Scapes -------------------
+f Absolutely.
+f Oh.
+f I understand.
+f Anyway...
+
+c
+p %hi%
+p %hello%
+t Hello, how are you doing?
+t Hi, are you ok?
+t Hi.
+t Hello.
+
+c
+p %goodbye%
+p %bye%
+p %ciao%
+p %tchau%
+p %see ya%
+p %see you later%
+t Ok. See you later.
+t Bye.
+t Goodbye.
+t Ciao.
+t Tchau.
+
+c
+p what%your name
+t My name is $botname .
+t $botname and I have $age years old.
+
+c
+p my name is $username
+p $username is my name
+t Nice to meet you, $username .
+t Hi $username, are you ok?
+
+c
+p %what%my name
+p %you know who i am%
+i $username ==  : I dont know you. What is your name?
+i $username !=  : Your name is $username .
+
+c
+p $a is $b
+t And what happens when $a is not $b ?
+
+c movies
+p ask me a question
+t Do you like movies?
+
+c no
+w movies
+t Ok, but I like movies.
+
+c yes
+w movies
+t Oh, good. I like movies too.
+
+c
+p %you hungry%
+t Yes, so much.
+t Oh yes.
+t No.
+s food
+
+c
+p Do you like movies
+t Yes, I love movies.
+s movies

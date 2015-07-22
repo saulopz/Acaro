@@ -1,0 +1,104 @@
+# This is a version simplified of AILM to load informations
+# into a database. In this version <stars/> do not exists, but
+# a variable $var is used for take informations and a % is used
+# to a LIKE query in database
+# Simplified AIML tag:
+$ c - category (add a new)
+# p - pattern
+# t - template
+# i - template conditional - use i condition : template
+# a - create a topic
+# s - set topic
+# w - that (w - where) - Necessary a category name
+# My additional tags:
+# l - link
+# d - do / execute
+# v - declare a variable
+# f - scapes - there is a kind of template that will be used
+#     when nothing more is found (randomic response).
+#
+# Created by Saulo Popov Zambiasi - saulopz@gmail.com
+# in Jul 21 2015.
+
+v $botname = 'Arisa'
+v $age = '18'
+
+#---- Scape
+f Absolutely.
+f Oh.
+f I understand.
+f Anyway...
+
+c
+p %hi%
+p %hello%
+t Hello, how are you doing?
+t Hi, are you ok?
+t Hi.
+t Hello.
+
+c
+p what%your name
+t My name is $botname .
+t $botname and I have $age years old.
+
+c
+p my name is $username
+p $username is my name
+t Nice to meet you, $username .
+t Hi $username, are you ok?
+
+c
+p %what%my name
+p %you know who i am%
+i $username == '' : I dont know you. What is your name?
+i $username != '' : Your name is $username .
+
+c
+p $a is $b
+t And what happens when $a is not $b ?
+
+#----------- That
+
+c movies
+p ask me a question
+t Do you like movies?
+
+c no
+w movies
+t Ok, but I like movies.
+
+c yes
+w movies
+t Oh, good. I like movies too.
+
+#----------- Topics / Contexts
+# Best use one file for each topic
+# use 'a' as a first tag of file
+
+c
+p Are you hungry?
+t Yes, so much.
+s food
+
+c
+p Do you like movies?
+t Yes, I love movies.
+s movies
+
+a movies
+
+c
+p what your favorite
+p which one do you like
+t I like The Matrix.
+t The Lord Of The Rings is so great.
+
+a food
+
+c
+p what your favorite
+p which one do you like
+t I like pizza.
+t I prefer sushi.
+
