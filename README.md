@@ -14,7 +14,7 @@ Acaro is a simple example of a Chatbot for my classes Artificial Intelligence. T
 
 There is a run.sh on project root directory that contains a single line to execute this softwre:
 
-`java -cp .:bin:lib/* program.Main`
+`java -cp .:bin:lib/* br.org.subverse.chatbot.Main`
 
 Acaro Software will ask for a username. It's important to correct management of chat logs and agent memory.
 
@@ -26,21 +26,21 @@ The kb files of Acaro are a simplified version of AIML to load information into 
 
 ### Tags based on AIML:
 
-	* # - comments.
-	* c - category.
-	* p - pattern.
-	* t - template.
-	* i - template conditional (usage `i condition : template`).
-	* a - create a topic.
-	* s - set topic (select a topic from a category).
-	* w - that (w - where) - Necessary a category name.
+* # - comments.
+* c - category.
+* p - pattern.
+* t - template.
+* i - template conditional (usage **i condition : template**).
+* a - create a topic.
+* s - set topic (select a topic from a category).
+* w - that (w - where) - Necessary a category name.
 
 ### My specific tags:
 
-	* l - link (a link of a homepage).
-	* d - do / execute (something. It can be a specific structure).
-	* v - declaration of a variable.
-	* f - scapes: It is a kind of template that will be used when nothing more was found (randomic response.
+* l - link (a link of a homepage).
+* d - do / execute (something. It can be a specific structure).
+* v - declaration of a variable.
+* f - scapes: It is a kind of template that will be used when nothing more was found (randomic response.
 
 ## Unimplemented features
 
