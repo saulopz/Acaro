@@ -1,4 +1,4 @@
-package chatbot;
+package br.org.subverse.chatbot;
 
 public class Variable {
     private Boolean global;

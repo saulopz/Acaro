@@ -1,4 +1,4 @@
-package program;
+package br.org.subverse.chatbot;
 
 import java.awt.BorderLayout;
 import java.awt.event.KeyEvent;
@@ -20,8 +20,6 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-import chatbot.ChatBot;
-
 public class Main {
     private JFrame frame;
     private JTextArea chatlog;
@@ -30,6 +28,8 @@ public class Main {
     private ChatBot bot;
 
     public Main(String email) {
+	DatabaseConnection.setConfig("jdbc:postgresql://localhost/acaro",
+		"saulo", "1234", "org.postgresql.Driver");
 	client = email;
 	bot = new ChatBot(client);
 	frame = new JFrame("My Simple Chatbot");
@@ -132,14 +132,12 @@ public class Main {
 	    KnowledgeBase kb = new KnowledgeBase(kbpath);
 	    kb.done();
 	}
+	DatabaseConnection.close();
     }
 
     public static void main(String[] arguments) {
 	String user = JOptionPane.showInputDialog("Please, enter your user");
 	if (!user.equals("")) {
-	    DatabaseConnection.setConfig(
-		    "jdbc:postgresql://localhost/mysimplechatbot", "saulo",
-		    "1234", "org.postgresql.Driver");
 	    new Main(user);
 	}
     }

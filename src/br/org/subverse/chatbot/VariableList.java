@@ -1,4 +1,4 @@
-package chatbot;
+package br.org.subverse.chatbot;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,9 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import program.DatabaseConnection;
-
 
 public class VariableList {
     private String client;
@@ -87,7 +84,7 @@ public class VariableList {
 		    write = true;
 		}
 	    }
-	    System.out.println("SEMA: " + query);
+	    System.out.println(query);
 	    if (write) {
 		stmt.executeUpdate(query);
 	    }

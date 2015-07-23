@@ -1,2 +1,2 @@
 #/bin/sh
-java -cp .:bin:lib/* program.Main
+java -cp .:bin:lib/* br.org.subverse.chatbot.Main

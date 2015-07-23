@@ -1,4 +1,4 @@
-package program;
+package br.org.subverse.chatbot;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
